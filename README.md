@@ -25,6 +25,7 @@ kubectl get namespaces
 kubectl get pod -A
 ```
 
+#
 ### INSTALL THE WEAVE WORKS GRAPHIC ADMINISTRATIVE TOOL
 ```
 kubectl apply -f https://github.com/weaveworks/scope/releases/download/v1.13.2/k8s-scope.yaml && kubectl patch svc weave-scope-app -n weave -p '{"spec": {"type": "LoadBalancer"}}'`
@@ -32,3 +33,29 @@ kubectl apply -f https://github.com/weaveworks/scope/releases/download/v1.13.2/k
 ```
 kubectl get svc -n weave
 ```
+
+#
+
+### SET UP THE PROJECT DEPLOY STRUCTURE
+- DOWNLOAD THE DEPLOYMENT PROJECT
+```
+git clone https://github.com/marcocouzin/hw-azure-deploy.git
+```
+- CHECK THE DEPLOY FILE
+```
+cd hw-azure-deploy/fed_deploy
+```
+```
+cat fed_deploy.yml
+```
+- CREATE THE DEPLOYMENT
+```
+kubectl create -f fed_deploy.yml 
+```
+### EXPOSE THE SERVICE THROUGH A LOAD BALANCER
+
+
+cat svc_page_loadbalancer.yml
+
+
+az aks delete --yes --name aksfiaptravel --resource-group gpaksfiaptravel && az group delete --yes --resource-group gpaksfiaptravel

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: fiaptravel
-          image: "marcocouzin/fiap_travel"
+          image: "marcocouzin/fiap_travel_fed"
           ports:
             - name: http
               containerPort: 80
